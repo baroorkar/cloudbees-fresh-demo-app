@@ -24,7 +24,7 @@ spec:
           mountPath: /kaniko/.docker
 
     - name: kubectl
-      image: bitnami/kubectl:1.33.4
+      image: registry.k8s.io/kubectl:v1.34.0
       command:
         - /bin/sh
         - -c
