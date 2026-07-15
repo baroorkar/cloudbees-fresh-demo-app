@@ -1,0 +1,13 @@
+{
+  "name": "cloudbees-fresh-demo-app",
+  "version": "1.0.0",
+  "description": "Sample Node.js application for the CloudBees CI demo assignment",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node --check app.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

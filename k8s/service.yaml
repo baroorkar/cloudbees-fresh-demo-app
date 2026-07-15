@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloudbees-demo-app
+spec:
+  type: ClusterIP
+  selector:
+    app: cloudbees-demo-app
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3000

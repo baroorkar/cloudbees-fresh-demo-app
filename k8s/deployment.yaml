@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudbees-demo-app
+  labels:
+    app: cloudbees-demo-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cloudbees-demo-app
+  template:
+    metadata:
+      labels:
+        app: cloudbees-demo-app
+    spec:
+      containers:
+        - name: cloudbees-demo-app
+          image: REPLACE_WITH_DOCKERHUB_USERNAME/cloudbees-fresh-demo-app:latest
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
