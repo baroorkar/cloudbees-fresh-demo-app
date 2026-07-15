@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cloudbees-demo-app
-          image: REPLACE_WITH_DOCKERHUB_USERNAME/cloudbees-fresh-demo-app:latest
+          image: baroorks/cloudbees-fresh-demo-app:latest
           imagePullPolicy: Always
           ports:
             - name: http
